@@ -23,6 +23,10 @@ header.mdl-layout__header {
   background-color: rgba(22,22,22,.6)
 }
 
+.mdl-layout__tab-bar {
+  background-color: rgba(22,22,22,.8)
+}
+
 .mdl-navigation__link.is-active {
   border-bottom: 3px solid red;
 }
