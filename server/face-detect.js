@@ -17,6 +17,7 @@ camera.setHeight(camHeight);
 
 module.exports = function (socket) {
   setInterval(function() {
+
     camera.read(function(err, im) {
       if (err) throw err;
 

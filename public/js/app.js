@@ -10,7 +10,7 @@ var img = new Image();
 
 // show loading notice
 context.fillStyle = '#333';
-context.fillText('Still not working...', canvas.width/2-30, canvas.height/3);
+context.fillText('Loading...', canvas.width/2-30, canvas.height/3);
 
 socket.on('frame', function (data) {
   // Reference: http://stackoverflow.com/questions/24107378/socket-io-began-to-support-binary-stream-from-1-0-is-there-a-complete-example-e/24124966#24124966
