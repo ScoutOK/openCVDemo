@@ -1,0 +1,23 @@
+h1 {
+  font-size: 42px;
+  width: 720px;
+  margin: .5rem auto;
+  line-height: 1;
+}
+
+.mdl-navigation__link.is-active {
+  border-bottom: 3px solid red;
+}
+
+#container {
+    margin: 1rem auto;
+    width: 720px;
+    height: 545px;
+}
+#videoElement {
+    width: 700px;
+    height: 525px;
+    background-color: #666;
+    margin: auto;
+    border: 10px #333 solid;
+}
