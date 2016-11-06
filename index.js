@@ -13,11 +13,13 @@ var socketio = require('socket.io');
 
 server.on('request', app);
 
-app.use(express.static(__dirname + '/public'));
-
-app.use('/', (req, res) => );
-
-app.listen(2222, function( server ) {
+server.listen(2222, function( server ) {
   console.log( 'Listening on port 2222' );
 });
+
+app.use(express.static(__dirname + '/public'));
+
+app.get('/', (req, res) => res.sendFile(__dirname + '/index.html'));
+
+
 
