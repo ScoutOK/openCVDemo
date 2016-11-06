@@ -4,13 +4,14 @@
   "description": "first attempt at using open cv for node",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.14.0",
+    "morgan": "^1.7.0",
     "nunjucks": "^2.5.2",
     "opencv": "^6.0.0",
     "socket.io": "^1.5.1"
