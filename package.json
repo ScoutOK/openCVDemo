@@ -1,0 +1,21 @@
+{
+  "name": "tryingopencv",
+  "version": "1.0.0",
+  "description": "first attempt at using open cv for node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "nunjucks": "^2.5.2",
+    "opencv": "^6.0.0",
+    "socket.io": "^1.5.1"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.18.0"
+  }
+}
