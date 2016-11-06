@@ -2,7 +2,7 @@
 
 const express = require('express');
 const router = require('./router');
-const faceDetect = require('./server/face-detect')
+const cvMethods = require('./server/detectShapes')
 const http = require('http');
 const morgan = require('morgan');
 const socketio = require('socket.io');
@@ -24,12 +24,16 @@ server.listen(app.get('port'), function( server ) {
 });
 
 
-app.get('/', (req, res) => res.sendFile(__dirname + '/public/index.html'));
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/public/index.html')
+});
+
+
 
 //implement socket.io into the server
 var io = socketio(server);
 
-io.on('connection', faceDetect);
+io.on('connection', cvMethods);
 
 module.exports.app = app;
 
