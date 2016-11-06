@@ -1,8 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('../img/mainBackground.png');
+  background-size: cover;
+  color: #fff;
+}
+
+img {
+  max-width: 100%;
+}
+
 h1 {
   font-size: 42px;
   width: 720px;
   margin: .5rem auto;
   line-height: 1;
+}
+
+header.mdl-layout__header {
+  background-color: rgba(22,22,22,.6)
+}
+
+.mdl-layout__tab-bar {
+  background-color: rgba(22,22,22,.8)
 }
 
 .mdl-navigation__link.is-active {
