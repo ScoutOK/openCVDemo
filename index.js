@@ -2,7 +2,7 @@
 
 const express = require('express');
 const router = require('./router');
-const cvMethods = require('./server/detectShapes')
+const cvMethods = require('./server/fullFace')
 const http = require('http');
 const morgan = require('morgan');
 const socketio = require('socket.io');
