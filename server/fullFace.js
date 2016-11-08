@@ -50,31 +50,6 @@ module.exports = function (socket) {
         }
         socket.emit('frame', { buffer: im.toBuffer() });
       });
-
-
-      im.detectObject('./node_modules/opencv/data/haarcascade_mcs_nose.xml', {}, function(err, mouths) {
-        if (err) throw err;
-
-        for (var i = 0; i < 1 && i < mouths.length; i++) {
-          let mouth = mouths[i];
-          //console.log(mouth)
-          im.ellipse(mouth.x + mouth.width / 2, mouth.y + mouth.height / 2, mouth.width / 2, mouth.height / 2, mouthColor, featThickness);
-          //im.detectObject('./node_modules/opencv/data/haarcascade_frontalface_default.xml')
-        }
-        socket.emit('frame', { buffer: im.toBuffer() });
-      });
-
-      im.detectObject('./node_modules/opencv/data/haarcascade_profileface.xml', {}, function(err, faces) {
-        if (err) throw err;
-
-        for (var i = 0; i < faces.length; i++) {
-          let face = faces[i];
-          //console.log(face)
-          im.ellipse(face.x + face.width / 2, face.y + face.height / 2, face.width / 2, face.height / 2, profileColor, faceThickness);
-          //im.detectObject('./node_modules/opencv/data/haarcascade_frontalface_default.xml')
-        }
-        socket.emit('frame', { buffer: im.toBuffer() });
-      });
     });
   }, camInterval);
 };
