@@ -55,7 +55,7 @@ module.exports = function (socket) {
 
       all.drawAllContours(contours, WHITE);
 
-      socket.emit('frame', { buffer: big.toBuffer() });
+      socket.emit('frame', { buffer: all.toBuffer() });
       });
   }, camInterval);
 };

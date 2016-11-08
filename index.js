@@ -51,7 +51,7 @@ io.on('connection', (socket) => {
       case 'hsv.html':
         require('./server/hsv')(socket)
         break
-      case 'removeLines.html':
+      case 'lines.html':
         require('./server/removeLines')(socket)
         break
       case 'threshold.html':

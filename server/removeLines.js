@@ -23,20 +23,32 @@ module.exports = function (socket) {
       var bw = im.adaptiveThreshold(255, 0, 0, 15, 2);
       bw.bitwiseNot(bw);
 
-      var vertical = bw.clone();
+      // var vertical = bw.clone();
 
-      var verticalsize = vertical.size()[0] / 30;
-      var verticalStructure = cv.imgproc.getStructuringElement(1, [1, verticalsize]);
+      // var verticalsize = vertical.size()[0] / 30;
+      // var verticalStructure = cv.imgproc.getStructuringElement(1, [1, verticalsize]);
+
+      // // Apply morphology operations
+      // vertical.erode(1, verticalStructure);
+      // vertical.dilate(1, verticalStructure);
+
+      // vertical.bitwiseNot(vertical);
+      // vertical.gaussianBlur([3, 3]);
+
+      var horizontal = bw.clone();
+
+      var horizontalsize = horizontal.size()[0] / 50;
+      var horizontalStructure = cv.imgproc.getStructuringElement(1, [horizontalsize, 1]);
 
       // Apply morphology operations
-      vertical.erode(1, verticalStructure);
-      vertical.dilate(1, verticalStructure);
+      horizontal.erode(1, horizontalStructure);
+      horizontal.dilate(1, horizontalStructure);
 
-      vertical.bitwiseNot(vertical);
-      vertical.gaussianBlur([3, 3]);
+      horizontal.bitwiseNot(horizontal);
+      horizontal.gaussianBlur([3, 3]);
 
       // Save output image
-      socket.emit('frame', { buffer: vertical.toBuffer() });
+      socket.emit('frame', { buffer: horizontal.toBuffer() });
     });
   }, camInterval);
 };
